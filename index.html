@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="portfolio.css">
+  <title>My Portfolio</title>
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <h1>Eniola Ogunbadejo</h1> <!-- 🔹 Change this to your name -->
+    <p>Web Developer | Designer | Problem Solver</p> <!-- 🔹 Change this tagline -->
+    <nav id="navbar">
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#skills" onclick="toggleMenu()">Skills</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <!-- 🔹 Replace profile.jpg with your picture file -->
+      <img src="https://pbs.twimg.com/profile_images/1361257956252278787/Bp_7IHIc_400x400.jpg" alt="My Picture">
+      <div class="about-text">
+        <p>Hello! I'm Eniola Ogunbadejo, a passionate web developer who loves turning ideas into reality through code. I specialize in creating modern, responsive, and user friendly websites. My goal is to build digital experiences that leave a lasting impact for my projects and clients.</p>
+        <a href="https://drive.google.com/file/d/1VYnzIQsY9jGd-9fM0vjAGdXR6J2j9iaq/view?usp=drive_link" class="cv-btn" download>📄 Download CV</a> <!-- 🔹 Replace cv.pdf with your resume file -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>HTML & CSS</h3>
+        <p>Building responsive and accessible web layouts.</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>Adding interactivity and dynamic features to web pages.</p>
+      </div>
+      <div class="card">
+        <h3>React</h3>
+        <p>Developing scalable and interactive user interfaces.</p>
+      </div>
+      <div class="card">
+        <h3>UI/UX</h3>
+        <p>Experience with designing interactive user interface using Figma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A modern responsive portfolio to showcase my skills and work.</p>
+      </div>
+      <div class="card">
+        <h3>E-commerce Site</h3>
+        <p>Developed a complete shopping platform with cart and checkout features.</p>
+      </div>
+      <div class="card">
+        <h3>Blog Platform</h3>
+        <p>Created a blog system with user authentication and CRUD features.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonials">
+      <!-- 🔹 Replace with real client/colleague feedback -->
+      <div class="card">
+        <p>"Eniola was fantastic to work with! Delivered the project on time and exceeded expectations."</p>
+        <strong>- Basirat Abdulkareem</strong>
+      </div>
+      <div class="card">
+        <p>"His attention to detail and creativity brought our idea to life perfectly."</p>
+        <strong>- Lawrence Hugo</strong>
+      </div>
+      <div class="card">
+        <p>"Professional, skilled, and always communicates clearly. Highly recommended!"</p>
+        <strong>- Robert Dalamin</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    
+    <!-- Contact Form using Formspree -->
+    <form id="contactForm" action="https://formspree.io/f/xeorgvzw" method="POST" class="contact-form">
+      <!-- Name -->
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required />
+
+      <!-- Email -->
+      <label for="email">Your Email</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required />
+
+      <!-- Subject -->
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" id="subject" placeholder="Message subject" required />
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <!-- Error Message Placeholder -->
+      <p id="error-message" style="color:red; display:none;"></p>
+
+<p id="status-message" style="display:none;"></p>
+
+      <!-- Submit -->
+      <button type="submit">Send Message</button>
+    </form>
+
+<div class="contact" style="text-align: center;">
+      <p>Email: eniolaogunbadejo90@gmail.com</p> <!-- 🔹 Replace with your email -->
+      <p>Phone: +234 906 037 4446</p> <!-- 🔹 Replace with your phone -->
+      <a href="https://github.com/Ennypoker01" target="_blank">GitHub</a> <!-- 🔹 Replace link -->
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a> <!-- 🔹 Replace link -->
+    </div>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eniola Ogunbadejo. All Rights Reserved.</p>
+  </footer>
+
+ <script>
+  // 🔹 Dark/Light mode toggle
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+    const btn = document.querySelector(".toggle-btn");
+    btn.textContent = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
+  }
+
+  // 🔹 Mobile menu toggle
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+  }
+
+  // ==== FORM VALIDATION + AJAX SUBMISSION ====
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault(); // prevent normal form submission (important!)
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let subject = document.getElementById("subject").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let errorMessage = document.getElementById("error-message");
+    let statusMessage = document.getElementById("status-message"); // ✅ add this in your HTML
+
+    // Regular expression for validating email
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    // Validation checks
+    if (name === "" || email === "" || subject === "" || message === "") {
+      errorMessage.style.display = "block";
+      errorMessage.textContent = "⚠️ Please fill in all fields.";
+      return;
+    }
+
+    if (!email.match(emailPattern)) {
+      errorMessage.style.display = "block";
+      errorMessage.textContent = "⚠️ Please enter a valid email address.";
+      return;
+    }
+
+    if (message.length < 10) {
+      errorMessage.style.display = "block";
+      errorMessage.textContent = "⚠️ Message should be at least 10 characters.";
+      return;
+    }
+
+    // If all is good, hide error message
+    errorMessage.style.display = "none";
+
+    // ==== AJAX SUBMISSION TO FORMSPREE ====
+    try {
+      const formData = new FormData(this);
+
+      let response = await fetch("https://formspree.io/f/xeorgvzw", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        statusMessage.style.display = "block";
+        statusMessage.style.color = "green";
+        statusMessage.textContent = "✅ Thanks! Your message has been sent.";
+        this.reset();
+      } else {
+        statusMessage.style.display = "block";
+        statusMessage.style.color = "red";
+        statusMessage.textContent = "❌ Oops! Something went wrong. Please try again.";
+      }
+    } catch (error) {
+      statusMessage.style.display = "block";
+      statusMessage.style.color = "red";
+      statusMessage.textContent = "⚠️ Network error. Please check your connection.";
+    }
+  });
+</script>
+
+
+</body>
+</html>
